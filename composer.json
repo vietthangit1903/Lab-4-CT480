@@ -1,0 +1,26 @@
+{
+    "name": "dell/mvc",
+    "description": "MVC CT480",
+    "type": "project",
+    "require": {
+        "illuminate/database": "^8.70",
+        "league/plates": "^3.4",
+        "illuminate/config": "^8.70"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Thang Pham",
+            "email": "thangb1910298@student.ctu.edu.vn"
+        }
+    ],
+    "minimum-stability": "stable"
+}
