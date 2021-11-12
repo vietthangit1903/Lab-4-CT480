@@ -35,6 +35,7 @@ trait UserAuthenticateTrait
         if (isset($_COOKIE['credentials'])) {
             setcookie('credentials', null, time() - 3600);
         }
+        
     }
 
 
