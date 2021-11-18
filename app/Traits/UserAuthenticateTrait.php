@@ -30,15 +30,13 @@ trait UserAuthenticateTrait
 
     public function signout()
     {
-        unset($_SESSION['user']);
-
+        //unset($_SESSION['user']);
+        session()->remove('user');
         if (isset($_COOKIE['credentials'])) {
             setcookie('credentials', null, time() - 3600);
         }
         
     }
-
-
 
 
     public function auto_login()
@@ -57,7 +55,8 @@ trait UserAuthenticateTrait
 
         if ($user) {
             $user->password = null;
-            $_SESSION['user'] = serialize($user);
+            //$_SESSION['user'] = serialize($user);
+            session()->set('user', serialize($user));
         }
     }
 }

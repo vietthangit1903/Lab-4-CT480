@@ -13,7 +13,7 @@ class LoginController extends BaseController{
 
     public function showLoginForm(){
         if(check_login() == true){
-            redirect("/home");
+            $this->redirect("/home");
         }
 
         $errors = [];
@@ -25,9 +25,9 @@ class LoginController extends BaseController{
         $user = $this->authenticate($credentials);
         if($user){
             $user->password = null;
-            $_SESSION['user'] = serialize($user);
-
-            if(isset($_POST['remember_me'])){
+            //$_SESSION['user'] = serialize($user);
+            session()->set('user', serialize($user));
+            if($this->request->post('remember_me')){
 
                 $str = serialize($credentials);
 
@@ -36,7 +36,8 @@ class LoginController extends BaseController{
                 setcookie('credentials', $encrypted, mktime(23,59,59,12,1,2021));
             }
 
-            redirect('/home');
+            //redirect('/home');
+            $this->redirect('/home');
 
         }
 
@@ -53,13 +54,14 @@ class LoginController extends BaseController{
 
     public function getCredentials(){
         return [
-            'username' => $_POST['username'] ?? null,
-            'password' => $_POST['password'] ?? null
+            'username' => $this->request->post('username'),
+            'password' => $this->request->post('password'),
         ];
     }
 
     public function logout(){
         $this->signout();
-        redirect('\home');
+        //redirect('\home');
+        $this->redirect('/home');
     }
 }

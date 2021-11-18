@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Request;
 use App\Traits\UserAuthenticateTrait;
 
 
@@ -111,10 +112,60 @@ if (!function_exists('auth')) {
      */
     function auth()
     {
-        $userSerialized = $_SESSION['user'] ?? null;
-
+        //$userSerialized = $_SESSION['user'] ?? null;
+        $userSerialized = session()->get('user');
         $user = $userSerialized ? unserialize($userSerialized) : null;
-
         return $user;
     }
+}
+
+
+if(!function_exists('session')){
+    /**
+     * Tra ve symfony session object
+     * 
+     * @return \App\Http\Session\Session
+     */
+    function session(){
+        $session = $GLOBALS['session'];
+
+        return $session;
+    }
+}
+
+if(!function_exists('request')){
+    /**
+     * Tra ve requset handler
+     * 
+     * @return \App\Http\Request
+     */
+    function request(){
+        /**
+         * @var \App\Http\Request
+         */
+        $request = $GLOBALS['request'];
+        return $request;
+    }
+
+}
+
+if(!function_exists('cookie')){
+    /**
+     * Tra ve cookie duoc browser gui len
+     * 
+     * @return \Symfony\Component\HttpFoundation\InputBag
+     */
+    function cookie(){
+        $cookie = request()->cookies;
+        return $cookie;
+    }
+}
+
+
+class FLASH {
+    public const SUCCESS = 'success';
+    public const WARNING = 'warning';
+    public const INFO = 'info';
+    public const ERROR = 'error';
+
 }

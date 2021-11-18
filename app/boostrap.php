@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 
 define("BASE_PATH", __DIR__);
 define('ENCRYPTION_KEY', '!@@#%_my_serect_key_for_encrytion_@#$!&');
@@ -21,10 +21,15 @@ foreach (glob($configPath . '*.php') as $phpFile) {
 
 $dbConfig = $config->get("app.db");
 
+$session = new \App\Http\Session\Session();
+$session->start();
+
 $routesPath = BASE_PATH . DIRECTORY_SEPARATOR . 'routes' . DIRECTORY_SEPARATOR;
 foreach(glob($routesPath . '*.php') as $phpFile){
     require_once "$phpFile";
 }
+
+$request = \App\Http\Request::createFromGlobals();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 

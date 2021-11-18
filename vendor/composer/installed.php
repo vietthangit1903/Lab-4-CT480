@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '1d254860139a12cedf187662b1cfc844e6b468c1',
         'name' => 'dell/mvc',
         'dev' => true,
     ),
     'versions' => array(
         'dell/mvc' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '1d254860139a12cedf187662b1cfc844e6b468c1',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -80,6 +80,15 @@
             'install_path' => __DIR__ . '/../illuminate/macroable',
             'aliases' => array(),
             'reference' => '300aa13c086f25116b5f3cde3ca54ff5c822fb05',
+            'dev_requirement' => false,
+        ),
+        'illuminate/pagination' => array(
+            'pretty_version' => 'v8.72.0',
+            'version' => '8.72.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../illuminate/pagination',
+            'aliases' => array(),
+            'reference' => '26006c680fa367926b35190dd7fb292d5222295d',
             'dev_requirement' => false,
         ),
         'illuminate/support' => array(
@@ -155,6 +164,15 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'reference' => '5f38c8804a9e97d23e0c8d63341088cd8a22d627',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-foundation' => array(
+            'pretty_version' => 'v5.3.10',
+            'version' => '5.3.10.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-foundation',
+            'aliases' => array(),
+            'reference' => '9f34f02e8a5fdc7a56bafe011cea1ce97300e54c',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
@@ -252,6 +270,15 @@
             'provided' => array(
                 0 => '2.3',
             ),
+        ),
+        'symfony/var-dumper' => array(
+            'pretty_version' => 'v5.3.10',
+            'version' => '5.3.10.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-dumper',
+            'aliases' => array(),
+            'reference' => '875432adb5f5570fff21036fd22aee244636b7d1',
+            'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(
             'pretty_version' => '1.5.6',
