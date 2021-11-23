@@ -35,7 +35,8 @@ class LoginController extends BaseController{
 
                 setcookie('credentials', $encrypted, mktime(23,59,59,12,1,2021));
             }
-
+            
+            session()->setFlash(\FLASH::SUCCESS, "Login successfully");
             //redirect('/home');
             $this->redirect('/home');
 
@@ -61,6 +62,9 @@ class LoginController extends BaseController{
 
     public function logout(){
         $this->signout();
+
+        session()->setFlash(\FLASH::INFO, "Bye!");
+
         //redirect('\home');
         $this->redirect('/home');
     }

@@ -6,7 +6,7 @@
                     <div class="col-lg-3 col-md-4 col-12">
                         <div class="footer-logo">
                             <a href="/home">
-                                <img src="assets/images/logo/white-logo.svg" alt="#" />
+                                <img src="/assets/images/logo/white-logo.svg" alt="#" />
                             </a>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                     <div class="col-lg-4 col-12">
                         <div class="payment-gateway">
                             <span>We Accept:</span>
-                            <img src="assets/images/footer/credit-cards-footer.png" alt="#" />
+                            <img src="/assets/images/footer/credit-cards-footer.png" alt="#" />
                         </div>
                     </div>
                     <div class="col-lg-4 col-12">

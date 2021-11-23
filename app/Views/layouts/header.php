@@ -79,7 +79,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-3 col-7">
                     <a class="navbar-brand" href="/home">
-                        <img src="assets/images/logo/logo.svg" alt="Logo" />
+                        <img src="/assets/images/logo/logo.svg" alt="Logo" />
                     </a>
                 </div>
                 <div class="col-lg-5 col-md-7 d-xs-none">
@@ -137,7 +137,7 @@
                                         <li>
                                             <a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
                                             <div class="cart-img-head">
-                                                <a class="cart-img" href="product-details.html"><img src="assets/images/header/cart-items/item1.jpg" alt="#" /></a>
+                                                <a class="cart-img" href="product-details.html"><img src="/assets/images/header/cart-items/item1.jpg" alt="#" /></a>
                                             </div>
                                             <div class="content">
                                                 <h4>
@@ -152,7 +152,7 @@
                                         <li>
                                             <a href="javascript:void(0)" class="remove" title="Remove this item"><i class="lni lni-close"></i></a>
                                             <div class="cart-img-head">
-                                                <a class="cart-img" href="product-details.html"><img src="assets/images/header/cart-items/item2.jpg" alt="#" /></a>
+                                                <a class="cart-img" href="product-details.html"><img src="/assets/images/header/cart-items/item2.jpg" alt="#" /></a>
                                             </div>
                                             <div class="content">
                                                 <h4>

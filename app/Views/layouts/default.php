@@ -7,10 +7,10 @@
     <title><?= config("app.APP_NAME") ?></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
-    <link rel="icon" type="image/png" href="assets/images/favicon.svg" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/images/favicon.svg" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/images/favicon.svg" sizes="96x96">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= request()->baseUrl(); ?>/assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" href="<?= request()->baseUrl(); ?>/assets/images/favicon.svg" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?= request()->baseUrl(); ?>/assets/images/favicon.svg" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?= request()->baseUrl(); ?>/assets/images/favicon.svg" sizes="96x96">
     <link rel="stylesheet" href="<?= request()->baseUrl(); ?>/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?= request()->baseUrl(); ?>/assets/css/LineIcons.3.0.css" />
     <link rel="stylesheet" href="<?= request()->baseUrl(); ?>/assets/css/tiny-slider.css" />
@@ -61,9 +61,12 @@
     <script src="<?= request()->baseUrl(); ?>/assets/js/bootstrap.bundle.min.js"></script>
     <script src="<?= request()->baseUrl(); ?>/assets/js/tiny-slider.js"></script>
     <script src="<?= request()->baseUrl(); ?>/assets/js/glightbox.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?= request()->baseUrl(); ?>/assets/js/main.js"></script>
 
+
+    <!-- Insert Flash messages -->
+    <?= $this->insert('/layouts/notifications'); ?>
     <!-- insert specific page's scripts -->
     <?= $this->section('js') ?>
 </body>
