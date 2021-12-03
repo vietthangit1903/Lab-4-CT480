@@ -112,8 +112,8 @@ if (!function_exists('auth')) {
      */
     function auth()
     {
-        //$userSerialized = $_SESSION['user'] ?? null;
-        $userSerialized = session()->get('user');
+        $userSerialized = $_SESSION['user'] ?? null;
+        // $userSerialized = session()->get('user');
         $user = $userSerialized ? unserialize($userSerialized) : null;
         return $user;
     }

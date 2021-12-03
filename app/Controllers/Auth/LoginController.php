@@ -25,8 +25,8 @@ class LoginController extends BaseController{
         $user = $this->authenticate($credentials);
         if($user){
             $user->password = null;
-            //$_SESSION['user'] = serialize($user);
-            session()->set('user', serialize($user));
+            $_SESSION['user'] = serialize($user);
+            //session()->set('user', serialize($user));
             if($this->request->post('remember_me')){
 
                 $str = serialize($credentials);

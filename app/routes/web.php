@@ -21,6 +21,9 @@ Router::post('/register', 'App\Controllers\Auth\RegisterController@register');
 Router::get('/address/ward', 'App\Controllers\AddressController@ward');
 Router::post('/address/ward/delete', 'App\Controllers\AddressController@deleteWard');
 
+Router::get('/profile', 'App\Controllers\ProfileController@profile');
+
+
 
 Router::error(function () {
     echo '404 :: Page not found';
