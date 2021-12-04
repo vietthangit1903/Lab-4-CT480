@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use App\Http\Response;
 use App\Models\User;
 
 trait UserAuthenticateTrait
@@ -30,9 +31,10 @@ trait UserAuthenticateTrait
 
     public function signout()
     {
-        //unset($_SESSION['user']);
+        // unset($_SESSION['user']);
         session()->remove('user');
-        if (isset($_COOKIE['credentials'])) {
+        if (cookie()->get('credentials')) {
+            // cookie()->remove('credentials');
             setcookie('credentials', null, time() - 3600);
         }
         
@@ -41,7 +43,7 @@ trait UserAuthenticateTrait
 
     public function auto_login()
     {
-        $encryptedCredentials = $_COOKIE['credentials'] ?? null;
+        $encryptedCredentials = cookie()->get('credentials');
 
         if (!$encryptedCredentials) {
             return;

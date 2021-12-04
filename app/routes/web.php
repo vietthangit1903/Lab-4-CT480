@@ -22,7 +22,15 @@ Router::get('/address/ward', 'App\Controllers\AddressController@ward');
 Router::post('/address/ward/delete', 'App\Controllers\AddressController@deleteWard');
 
 Router::get('/profile', 'App\Controllers\ProfileController@profile');
+Router::post('/profile', 'App\Controllers\ProfileController@uploadProfile');
 
+Router::get('/contact', 'App\Controllers\ContactController@contact');
+Router::post('/contact', 'App\Controllers\ContactController@addContact');
+
+Router::get('/contact_ward', 'App\Controllers\ContactController@contactWard');
+
+Router::get('/contact_list', 'App\Controllers\ContactController@showContactList');
+Router::post('/contact_list/delete', 'App\Controllers\ContactController@deleteContact');
 
 
 Router::error(function () {

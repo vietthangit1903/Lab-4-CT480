@@ -45,7 +45,7 @@ class Response  extends BaseResponse
      */
     public function deleteCookie($name)
     {
-        $this->headers->setCookie(new Cookie($name, null, time() - 100000));
+        $this->headers->setCookie(new Cookie($name, null, mktime(0,0,0,1,1,1999)));
         return $this;
     }
 }

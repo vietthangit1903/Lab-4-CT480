@@ -41,10 +41,22 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="top-end">
-                    <?php if (auth()) : ?>
-                            <div class="user">
-                                <i class="lni lni-user"></i>
-                                Hello <?= auth()->username; ?>
+
+                        <?php if (auth()) : ?>
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="user">
+                                        <i class="lni lni-user"></i>
+                                        Hello <?= auth()->username; ?>
+                                    </div>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="/contact">Add contact</a></li>
+                                    <li><a class="dropdown-item" href="/contact_list">Show contact list</a></li>
+                                    
+                                </ul>
                             </div>
                             <ul class="user-login">
                                 <li>

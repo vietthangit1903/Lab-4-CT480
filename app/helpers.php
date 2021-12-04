@@ -38,7 +38,7 @@ if (!function_exists('redirect')) {
 if (!function_exists('check_login')) {
     function check_login()
     {
-        return isset($_SESSION['user']) ? true : false;
+        return session()->get('user') ? true : false;
     }
 }
 
@@ -112,8 +112,8 @@ if (!function_exists('auth')) {
      */
     function auth()
     {
-        $userSerialized = $_SESSION['user'] ?? null;
-        // $userSerialized = session()->get('user');
+        // $userSerialized = $_SESSION['user'] ?? null;
+        $userSerialized = session()->get('user');
         $user = $userSerialized ? unserialize($userSerialized) : null;
         return $user;
     }
@@ -156,8 +156,8 @@ if(!function_exists('cookie')){
      * @return \Symfony\Component\HttpFoundation\InputBag
      */
     function cookie(){
-        $cookie = request()->cookies;
-        return $cookie;
+        $cookies = request()->cookies;
+        return $cookies;
     }
 }
 

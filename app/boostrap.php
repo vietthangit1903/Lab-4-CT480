@@ -24,12 +24,13 @@ $dbConfig = $config->get("app.db");
 $session = new \App\Http\Session\Session();
 $session->start();
 
+$request = \App\Http\Request::createFromGlobals();
+
 $routesPath = BASE_PATH . DIRECTORY_SEPARATOR . 'routes' . DIRECTORY_SEPARATOR;
 foreach(glob($routesPath . '*.php') as $phpFile){
     require_once "$phpFile";
 }
 
-$request = \App\Http\Request::createFromGlobals();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 

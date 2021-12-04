@@ -11,10 +11,8 @@ class HomeController extends BaseController
 
     public function index()
     {
-
         if (!check_login())
-            $this->auto_login();
-
+            $this->auto_login(); 
         return $this->render('home/index');
     }
 }
