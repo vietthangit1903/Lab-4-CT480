@@ -38,6 +38,15 @@ function Validator(options) {
     }
 }
 // Dinh nghia cac rang buoc
+Validator.isRequired = function (selector){
+    return {
+        selector: selector,
+        test: function (value) {
+            return value ? undefined : 'Please fill in this field';
+        }
+    };
+};
+
 Validator.isUsername = function (selector) {
     return {
         selector: selector,
@@ -74,6 +83,16 @@ Validator.confirmPassword = function(selector, getConfirmValue){
         test: function(value){
             return value === getConfirmValue() ? undefined : 'Password does not match.'
         }
-    }
-}
+    };
+};
+
+Validator.isPhoneNumber = function(selector){
+    return {
+        selector: selector,
+        test: function (value) {
+            var regexUsername = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            return regexUsername.test(value) ? undefined : 'Phone number is invalid!';
+        }
+    };
+};
 

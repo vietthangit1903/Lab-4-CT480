@@ -62,6 +62,16 @@ class Contact extends Model
     public $errors = [];
 
     public function validate($params = []){
+        //Validate ward id
+        if($params['ward_id'] == null || $params['ward_id'] == 0){
+            $this->errors['ward_id'] = 'You must choose specific ward!';
+        }
+        
+        //Validate address
+        if($params['address'] == null){
+            $this->errors['address'] = 'You must type specific address!';
+        }
+
         //Validate phone number
         //Phone number bat dau bang 84 hoac 0, theo sau la 9 chu so
         $pattern = '/(84|0[3|5|7|8|9])+([0-9]{8})\b/';
